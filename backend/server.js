@@ -44,8 +44,9 @@ mongoose.connect(process.env.MONGO_URI)
 
         // Check if running locally and start listening
         if (process.env.NODE_ENV !== 'production') {
-            app.listen(process.env.PORT || 4000, () => {
-                console.log('Server running on port', process.env.PORT || 4000);
+            const port = process.env.PORT || 4000;
+            app.listen(port, () => {
+                console.log('Server running on port', port);
             });
         }
     })
