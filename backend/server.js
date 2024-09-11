@@ -144,6 +144,10 @@ app.use((req, res, next) => {
 // Routes
 app.use('/api/workouts', workoutRoutes);
 app.use('/api/user', userRoutes);
+app.get('/', (req, res) => {
+  res.send('Welcome to the Workout App API!');
+});
+
 
 // Connect to MongoDB
 mongoose
